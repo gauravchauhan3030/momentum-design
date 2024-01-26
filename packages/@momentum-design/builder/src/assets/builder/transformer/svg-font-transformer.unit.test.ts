@@ -8,7 +8,7 @@ describe('@momentum-design/builder - SVG Font Transformer', () => {
   const FORMAT: Formats = { config: { fontName: FONT_NAME }, type: 'SVG_FONT' };
 
   beforeEach(() => {
-    transformer = new SVGFontTransformer(FORMAT, '/dist');
+    transformer = new SVGFontTransformer(FORMAT, 'dist');
     // @ts-ignore
     jest.spyOn(transformer.logger, 'debug').mockImplementation(() => {});
   });
@@ -20,7 +20,7 @@ describe('@momentum-design/builder - SVG Font Transformer', () => {
 
     it('should mount the format provided to the class object', () => {
       expect(transformer.format).toBe(FORMAT);
-      expect(transformer.destination).toBe('/dist');
+      expect(transformer.destination).toBe('dist');
     });
   });
 });
